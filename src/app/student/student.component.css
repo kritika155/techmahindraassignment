@@ -1,0 +1,12 @@
+ul li{
+    list-style-type:none;
+}
+.form input[type="text"],input[type="date"]{
+    width:15%;
+    height: 9%;
+    
+}
+
+.list table{
+    background-color: white;
+}
