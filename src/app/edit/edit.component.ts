@@ -8,16 +8,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  id: number;
+  rollno: number;
   private sub: any;
   student:any;
   
   constructor(private route: ActivatedRoute, private studentService:StudentService,private router :Router) { }
 
   ngOnInit() {
-    this.studentService.getStudents();
-    const rollno=+this.route.snapshot.params['rollno'];
-    this.student=this.studentService.getStudentByRollno(rollno);
+    this.sub = this.route.params.subscribe(params => {
+      this.rollno = +params['rollno']; // (+) converts string 'id' to a number
+      console.log("rollno is "+this.rollno);
+      this.student = this.studentService.getStudentByRollno(this.rollno);
+
+      // In a real app: dispatch action to load the details here.
+   });
   }
   updateStudent(student){
     this.studentService.updateStudent(student);

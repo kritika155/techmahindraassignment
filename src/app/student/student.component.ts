@@ -40,7 +40,20 @@ export class StudentComponent implements OnInit {
       };
     
   }
- 
+  updateStudent(student){
+    this.studentService.updateStudent(student);
+    this.studentService.getStudents();
+    this.student={
+      
+      rollno:0,
+      dob:0,
+      firstName:'',
+      lastName:'',
+      parentName:'',
+      parentPhone:'',
+      address:''
+    };
+  }
   deleteAll(){
     this.studentService.deleteAll();
   }

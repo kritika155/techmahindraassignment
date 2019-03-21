@@ -23,8 +23,14 @@ export default class StudentService {
     }
   	return this.students;
   }
-  getStudentByRollno(rollno:number){
-   return this.students.find(e => e.rollno ===rollno);
+  getStudentByRollno(rollno){
+    for(var i=0;i<this.students.length;i++)
+    {
+      if(this.students[i].rollno==rollno){
+        return this.students[i];
+      }
+    }
+    return null;
   }
   addStudent(student){
   	student.rollno = this.students.length+1;
