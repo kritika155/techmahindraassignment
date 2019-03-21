@@ -23,7 +23,9 @@ export default class StudentService {
     }
   	return this.students;
   }
- 
+  getStudentByRollno(rollno:number){
+   return this.students.find(e => e.rollno ===rollno);
+  }
   addStudent(student){
   	student.rollno = this.students.length+1;
     	this.students.push(student);

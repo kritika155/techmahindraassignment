@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import  StudentService  from '../student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -16,7 +17,7 @@ export class StudentComponent implements OnInit {
     parentPhone:'',
     address:''
   };
-  constructor(private studentService :StudentService) { }
+  constructor(private router :Router,private studentService :StudentService) { }
 
   ngOnInit() {
   }
@@ -39,20 +40,7 @@ export class StudentComponent implements OnInit {
       };
     
   }
-  updateStudent(student){
-    this.studentService.updateStudent(student);
-    this.studentService.getStudents();
-    this.student={
-      
-      rollno:0,
-      dob:0,
-      firstName:'',
-      lastName:'',
-      parentName:'',
-      parentPhone:'',
-      address:''
-    };
-  }
+ 
   deleteAll(){
     this.studentService.deleteAll();
   }
@@ -60,6 +48,10 @@ export class StudentComponent implements OnInit {
   	this.studentService.deleteStudent(student);
     student = this.studentService.getStudents();
     
+  }
+  onEdit(rollNo:number)
+  {
+    this.router.navigate(['/edit',rollNo]);
   }
   // editStudent(student){
   //   this.studentService.editStudent(student);

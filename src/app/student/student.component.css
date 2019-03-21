@@ -9,4 +9,36 @@ ul li{
 
 .list table{
     background-color: white;
+    width:100%;
+    border:"2" ;
+ 
+}
+.list table thead th{
+    width: 15%;
+}
+.list table tbody td{
+    width: 15%;
+}
+.form h1{
+    text-align: center;
+}
+.form{
+    text-align: center;
+}
+.list{
+    text-align: center;
+}
+@media only screen and (max-width: 600px){
+    .list table{
+        background-color: white;
+        width:30%;
+        border:"1" ;
+       
+    }
+    .list table thead th{
+        width: 10%;
+    }
+    .list table tbody td{
+        width: 10%;
+    }
 }

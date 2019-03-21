@@ -1,5 +1,6 @@
 
 <div class="form">
+  <h1>Welcome to Student App</h1>
   <input type="text" name="rollno" value="rollno" [(ngModel)]="student.rollno" placeholder="rollno"><br>
   <input type="date" name="calender" value="calender" [(ngModel)]="student.dob" placeholder="dob"><br>
 <input type="text" name="firstName" value="firstName" [(ngModel)]="student.firstName" placeholder="firstname"><br>
@@ -9,36 +10,37 @@
 <input type="text" name="address" value="address" [(ngModel)]="student.address" placeholder="address"><br>
 <input type="button" name="add" value="Add Student" (click)="addStudent(student)" >
 <br>
-<input type="button" value="Update" name="edit" (click)="updateStudent(student)">
 <br><br><br>
 </div>
 <div class="list" >
   
-        <table style="width:100%"  border="1"  border-collapse: collapse>
+        <table >
             <thead>
-              <th width="15%">Roll No</th>
-              <th width="10%">DOB</th>
-              <th width="15%">First Name</th> 
-              <th width="15%">Last Name</th>
-              <th width="10%">Parent Name</th>
-              <th width="15%">Parent Phone</th>
-              <th width="25%">Address</th>
+              <th>Roll No</th>
+              <th>DOB</th>
+              <th>First Name</th> 
+              <th>Last Name</th>
+              <th>Parent Name</th>
+              <th>Parent Phone</th>
+              <th>Address</th>
             </thead>
             <tbody *ngFor="let student of students">
-              <td width="15%">{{student.rollno}}</td>
-              <td width="15%">{{student.dob}}</td>
-              <td width="15%">{{student.firstName}}</td>
-              <td width="15%">{{student.lastName}}</td>
-              <td width="15%">{{student.parentName}}</td>
-              <td width="15%">{{student.parentPhone}}</td>
-              <td width="25%">{{student.address}}</td>
-              <td width="15%"><input type="button" name="delete" value="&times;" (click)="deleteStudent(student)">
+              <td>{{student.rollno}}</td>
+              <td>{{student.dob}}</td>
+              <td>{{student.firstName}}</td>
+              <td>{{student.lastName}}</td>
+              <td>{{student.parentName}}</td>
+              <td>{{student.parentPhone}}</td>
+              <td >{{student.address}}</td>
+              <td><input type="button" name="edit" value="edit" (click)="onEdit(student.rollno)">
+
+              <td><input type="button" name="delete" value="&times;" (click)="deleteStudent(student)">
                 <!-- <td width="15%"><input type="button" name="edit" value="edit" (click)="editStudent(student)"> -->
 
               </td>
               
             </tbody>
     </table>
-    
+    <button name="deleteAll"  (click)="deleteAll()" id="delete">deleteAll</button>
+
 </div>
-<button name="deleteAll"  (click)="deleteAll()">deleteAll</button>

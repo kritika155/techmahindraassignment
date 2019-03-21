@@ -1,0 +1,12 @@
+<div class="edit">
+  <h1>Update Your Data here</h1>
+  <input type="text" name="rollno" value="rollno" [(ngModel)]="student.rollno" placeholder="rollno"><br>
+  <input type="date" name="calender" value="calender" [(ngModel)]="student.dob" placeholder="dob"><br>
+  <input type="text" name="firstName" value="firstname" [(ngModel)]="student.firstName" placeholder="firstname"><br>
+  <input type="text" name="lastName" value="lastname" [(ngModel)]="student.lastName" placeholder="lastname"><br>
+  <input type="text" name="phone" value="parentname" [(ngModel)]="student.parentName" placeholder="parentName"><br>
+  <input type="text" name="phone" value="parentphone" [(ngModel)]="student.parentPhone" placeholder="parentPhone"><br>
+  <input type="text" name="address" value="address" [(ngModel)]="student.address" placeholder="address"><br>
+  <input type="button" value="Update" name="edit" (click)="updateStudent(student)">
+  
+</div>
